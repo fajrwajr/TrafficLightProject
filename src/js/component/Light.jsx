@@ -1,12 +1,10 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "bootstrap";
 
 //create your first component
-const Light = () => {
+const Light = props => {
 	const [toggle, setToggle] = useState("off");
-	let red = "bg-danger rounded-circle";
-	let green = "bg-success rounded-circle";
-	let yellow = "bg-warning rounded-circle";
 	let off = "bg-secondary rounded-circle";
 
 	return (
@@ -18,7 +16,10 @@ const Light = () => {
 					toggle == "off" ? (
 						<div className={off}>off</div>
 					) : (
-						<div className={red}>on</div>
+						<div
+							className={`glow ${props.colorOne} ${props.shape}`}>
+							on
+						</div>
 					)}
 				</div>
 			</div>
@@ -27,7 +28,10 @@ const Light = () => {
 					{toggle == "red" || toggle == "green" || toggle == "off" ? (
 						<div className={off}>off</div>
 					) : (
-						<div className={yellow}>on</div>
+						<div
+							className={`glower ${props.colorTwo} ${props.shape}`}>
+							on
+						</div>
 					)}
 				</div>
 			</div>
@@ -38,7 +42,10 @@ const Light = () => {
 					toggle == "off" ? (
 						<div className={off}>off</div>
 					) : (
-						<div className={green}>on</div>
+						<div
+							className={`glowerest ${props.colorThree} ${props.shape}`}>
+							on
+						</div>
 					)}
 				</div>
 			</div>
@@ -46,3 +53,10 @@ const Light = () => {
 	);
 };
 export default Light;
+
+Light.propTypes = {
+	colorOne: PropTypes.string,
+	colorTwo: PropTypes.string,
+	colorThree: PropTypes.string,
+	shape: PropTypes.string
+};
