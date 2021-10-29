@@ -27,24 +27,20 @@ const Light = props => {
 					{toggle == "yellow" ||
 					toggle == "green" ||
 					toggle == "off" ? (
-						<div className={off}>off</div>
+						<div className={off}></div>
 					) : (
 						<div
-							className={`glow ${props.colorOne} ${props.shape}`}>
-							on
-						</div>
+							className={`glow ${props.colorOne} ${props.shape}`}></div>
 					)}
 				</div>
 			</div>
 			<div>
 				<div onClick={() => setToggle("yellow")}>
 					{toggle == "red" || toggle == "green" || toggle == "off" ? (
-						<div className={off}>off</div>
+						<div className={off}></div>
 					) : (
 						<div
-							className={`glower ${props.colorTwo} ${props.shape}`}>
-							on
-						</div>
+							className={`glower ${props.colorTwo} ${props.shape}`}></div>
 					)}
 				</div>
 			</div>
@@ -53,12 +49,10 @@ const Light = props => {
 					{toggle == "yellow" ||
 					toggle == "red" ||
 					toggle == "off" ? (
-						<div className={off}>off</div>
+						<div className={off}></div>
 					) : (
 						<div
-							className={`glowerest ${props.colorThree} ${props.shape}`}>
-							on
-						</div>
+							className={`glowerest ${props.colorThree} ${props.shape}`}></div>
 					)}
 				</div>
 			</div>
