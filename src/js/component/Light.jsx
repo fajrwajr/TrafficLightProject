@@ -7,8 +7,21 @@ const Light = props => {
 	const [toggle, setToggle] = useState("off");
 	let off = "bg-secondary rounded-circle";
 
+	function sa() {
+		if (toggle === "red") {
+			setToggle("yellow");
+		} else if (toggle === "yellow") {
+			setToggle("green");
+		} else if (toggle === "green") {
+			setToggle("red");
+		} else {
+			setToggle("red");
+		}
+	}
+	setTimeout(sa, 2000);
+
 	return (
-		<div className="container text-center mt-5">
+		<div className="container">
 			<div>
 				<div onClick={() => setToggle("red")}>
 					{toggle == "yellow" ||
